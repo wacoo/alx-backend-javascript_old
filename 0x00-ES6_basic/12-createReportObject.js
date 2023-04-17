@@ -1,9 +1,13 @@
 /* create a function createReportObject
   Parameters":
-	employeesList: Array
+    employeesList: Array
 */
-import {createEmployeesObject} from './11-createEmployeesObject';
-employeesList = createEmployeesObject();
 export default function createReportObject(employeesList) {
-
+  const all = {
+    allEmployees: employeesList,
+    getNumberOfDepartments() {
+      return Object.keys(employeesList).length;
+    },
+  };
+  return all;
 }
