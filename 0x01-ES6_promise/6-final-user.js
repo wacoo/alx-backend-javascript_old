@@ -7,10 +7,10 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   const promise2 = uploadPhoto(fileName);
 
   return Promise.allSettled([promise1, promise2])
-    .then((values) => {
+    .then((values) => (
       values.map((val) => ({
         status: val.status,
         value: val.status === 'fulfilled' ? val.status : val.reason.toString(),
-      }));
-    });
+      }))
+    ));
 }
