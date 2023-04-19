@@ -1,7 +1,5 @@
 /* accept two arguments numerator and denominator,
-when denominator is equal to 0, throw new error 
-
-
+when denominator is equal to 0, throw new error
 */
 
 export default function divideFunction(numerator, denominator) {
