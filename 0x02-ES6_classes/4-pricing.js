@@ -5,28 +5,39 @@
 */
 import Currency from './3-currency';
 
-export default class Pricing{
-  constructor(amount, currency){
-    this._amount = typeof amount === 'amount' ? amount : throw new TypeError('Amount is not a number');
-    this._currency = instanceof currency === Currency ? currency : throw new TypeError('Currency is not a Currency');
+export default class Pricing {
+  constructor(amount, currency) {
+    this.amount = amount;
+    this.currency = currency;
   }
-  getAmount(){
+
+  get amount() {
     return this._amount;
   }
-  setAmount(amount){
+
+  set amount(amount) {
+    if (typeof amount !== 'number') {
+      throw new TypeError('Amount is not a number');
+    }
     this._amount = amount;
   }
-  getCurrency(){
+
+  get currency() {
     return this._currency;
   }
-  setCurrency(currency){
+
+  set currency(currency) {
+    if (currency instanceof Currency === false) {
+      throw new TypeError('Currency is not a Currency');
+    }
     this._currency = currency;
   }
-  displayFullPrice(){
-    return {_amount: this._amount, _currency: this._currency}
+
+  displayFullPrice() {
+    return `${this.amount} ${this.currency.displayFullCurrency()}`;
   }
-  static convertPrice(amount, conversionRate){
+
+  static convertPrice(amount, conversionRate) {
     return amount * conversionRate;
   }
 }
-

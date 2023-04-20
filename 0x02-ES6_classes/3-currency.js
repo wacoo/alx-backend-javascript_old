@@ -1,29 +1,38 @@
-/* implements a class named Currency 
+/* implements a class named Currency
   Args:
     code: String
     name: String
 */
 
-export default class Currency{
-  constructor(code, namse){
-    this._code = typeof code === 'string' ? code : throw new TypeError('Code is not a string');
-    this._name = typeof name === 'string' ? name : throw new TypeError('Name is not a string');
+export default class Currency {
+  constructor(code, name) {
+    this.code = code;
+    this.name = name;
   }
 
-  getCode(){
+  get code() {
     return this._code;
   }
-  setCode(code){
+
+  set code(code) {
+    if (typeof code !== 'string') {
+      throw new TypeError('Code is not a string');
+    }
     this._code = code;
   }
-  getName(){
-    return this._code;
+
+  get name() {
+    return this._name;
   }
-  setName(name){
+
+  set name(name) {
+    if (typeof name !== 'string') {
+      throw new TypeError('Name is not a string');
+    }
     this._name = name;
   }
 
-  dusplayFullCurrency(){
-    return `${this._name (${this._code})}`;
+  displayFullCurrency() {
+    return `${this.name} (${this.code})`;
   }
 }
