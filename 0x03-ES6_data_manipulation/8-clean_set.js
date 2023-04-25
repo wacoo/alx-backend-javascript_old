@@ -5,7 +5,9 @@ export default function cleanSet(set, startString) {
   if (set && startString && (set instanceof Set) && typeof startString === 'string') {
     for (const element of set.values()) {
       if (element.startsWith(startString)) {
-        str.push(element.substring(startString.length, element.length));
+        if (typeof element === 'string') {
+          str.push(element.substring(startString.length, element.length));
+        }
       }
     }
   }
