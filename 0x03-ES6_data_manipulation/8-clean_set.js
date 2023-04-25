@@ -4,10 +4,9 @@ export default function cleanSet(set, startString) {
   const str = [];
   if (set && startString && (set instanceof Set) && typeof startString === 'string') {
     for (const element of set.values()) {
-      if (element.startsWith(startString)) {
-        if (typeof element === 'string') {
-          str.push(element.substring(startString.length, element.length));
-        }
+      const elt = element.substring(startString.length, element.length);
+      if (elt && elt.startsWith(startString) && typeof elt === 'string' && elt !== element) {
+          str.push(elt.substring(startString.length, elt.length));
       }
     }
   }
