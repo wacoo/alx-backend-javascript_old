@@ -1,13 +1,13 @@
 /* returns a string all set values that start with specific string */
 
 export default function cleanSet(set, startString) {
-  let str = '';
-  set.forEach(
-    (element) => {
+  const str = [];
+  if (set && startString && (set instanceof Set) && typeof startString === 'string') {
+    for (const element of set.values()) {
       if (element.startsWith(startString)) {
-        str += `-${element.substring(startString.length, element.length)}`;
+        str.push(element.substring(startString.length, element.length));
       }
-    },
-  );
-  return str;
+    }
+  }
+  return str.join('-');
 }
