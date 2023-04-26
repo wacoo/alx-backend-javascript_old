@@ -6,37 +6,39 @@ interface Teacher {
   location: string;
   [state: string]: any; 
 }
+/*
 const teacher1: Teacher = {
-  firstName: 'John',
-  lastName: 'Doe',
-  fullTimeEmployee: false,
-  location: 'London',
   contract: false,
+  firstName: 'John',
+  fullTimeEmployee: false,
+  lastName: 'Doe',
+  location: 'London',
 };
 console.log(teacher1);
-
+*/
 interface Directors extends Teacher {
-  numberOfReporters: number;
+  numberOfReports: number;
 }
 
-const director2: Director = {
+/*const director2: Directors = {
   firstName: 'John',
   lastName: 'Doe',
-  fullTimeEmployee: false,
   location: 'London',
-  contract: false,
+  fullTimeEmployee: true,
   numberOfReports: 17,
 };
 console.log(director2);
-
+*/
 function printTeacher(firstName: string, lastName: string): string {
-  const intial: string = firstName.charAt(0);
+  const initial: string = firstName.charAt(0);
   return `${initial}. ${lastName}`;
 }
 
 interface printTeacherFunction {
-  (firstName: string, lastName: lastName): string;
+  (firstName: string, lastName: string): string;
 }
+
+//console.log(printTeacher("Wonde", "Chosha"));
 
 interface StudentClassInt {
   workOnHomework(): string;
@@ -44,16 +46,16 @@ interface StudentClassInt {
 }
 
 interface StudentClassConstractor {
-  new (firstName: string, lastName): StudentClassInt;
+  new (firstName: string, lastName: string): StudentClassInt;
 }
 
 class StudentClass implements StudentClassInt {
-  firstName: string;
-  lastName: string;
+  private _firstName: string;
+  private _lastName: string;
 
   constructor (firstName: string, lastName: string) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+    this._firstName = firstName;
+    this._lastName = lastName;
   }
 
   workOnHomework () {
