@@ -1,4 +1,4 @@
-/* read file */
+/* read file async */
 const fs = require('fs');
 
 function countStudents(file) {
