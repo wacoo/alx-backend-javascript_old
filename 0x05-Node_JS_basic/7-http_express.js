@@ -46,11 +46,11 @@ app.get('/', (req, res) => {
 
 app.get('/students', (req, res) => {
   countStudents(process.argv[2]).then((output) => {
-    const resStr = output.join('<br>');
-    const data = ['This is the list of our students', resStr].join('<br>');
+    const resStr = output.join('\n');
+    const data = ['This is the list of our students', resStr].join('\n');
     res.send(data);
   }).catch(() => {
-    res.send(['This is the list of our students', 'Cannot load the database'].join('<br>'));
+    res.send(['This is the list of our students', 'Cannot load the database'].join('\n'));
   });
 });
 
