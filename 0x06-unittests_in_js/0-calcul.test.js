@@ -39,4 +39,12 @@ describe('tests caculateNumber', () => {
     const sum = calculateNumber(4, 0);
     assert.strictEqual(sum, 4);
   });
+  it('test', () => {
+    const sum = calculateNumber(0, 0);
+    assert.strictEqual(sum, 0);
+  });
+  it('test', () => {
+    const sum = calculateNumber(-4, -2);
+    assert.strictEqual(sum, -6);
+  });
 });
