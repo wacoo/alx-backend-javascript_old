@@ -1,25 +1,23 @@
-/* acccept two numbers returns the sum improved */
-
 function calculateNumber(type, a, b) {
-  const num1 = Math.round(a);
-  const num2 = Math.round(b);
-  let res = 0;
-  switch (type) {
-  case 'SUM':
-    res = num1 + num2;
-    break;
-  case 'SUBTRACT':
-    res = num1 - num2;
-    break;
-  case 'DIVIDE':
-    if (num2 === 0) {
-      return "Error"
-    } else {
-      res = num1 / num2;
-    }
+    const an = Math.round(a);
+    const bn = Math.round(b);
+    let c = 0;
+    switch (type) {
+    case 'SUM':
+	c = an + bn;
+	break;
+    case 'SUBTRACT':
+	c = an - bn;
+	break;
+    case 'DIVIDE':
+      if (bn === 0) {
+            c = "Error";
+      } else {
+            c = an / bn;
+      }
       break;
     }
-    return res;
+    return c;
 }
 
 module.exports = calculateNumber;
