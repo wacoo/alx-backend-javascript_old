@@ -31,4 +31,12 @@ describe('tests caculateNumber', () => {
     const sum = calculateNumber(-2.6, 4.2);
     assert.strictEqual(sum, 2);
   });
+  it('test', () => {
+    const sum = calculateNumber(0, 4);
+    assert.strictEqual(sum, 4);
+  });
+  it('test', () => {
+    const sum = calculateNumber(4, 0);
+    assert.strictEqual(sum, 4);
+  });
 });
